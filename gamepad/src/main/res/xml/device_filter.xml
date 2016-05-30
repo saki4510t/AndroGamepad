@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--/*
+	 * AndroGamepad
+	 * library and sample to access to various gamepad with common interface
+	 *
+	 * Copyright (c) 2015-2016 saki t_saki@serenegiant.com
+	 *
+	* File name: device_filter.xml
+	 *
+	 * Distributed under the terms of the GNU Lesser General Public License (LGPL v3.0) License.
+	 * License details are in the file license.txt, distributed as part of this software.
+	*/ -->
+<resources>
+	<!-- 自動起動用のUSBデバイスフィルター定義 -->
+	<!-- ELECOM JC-J2912F -->
+	<usb-device class="3" subclass="0" protocol="0" vendor-id="4607" product-id="13105" />
+	<!-- SONY DualShock3 -->
+	<usb-device class="3" subclass="0" protocol="0" vendor-id="1356" product-id="616" />
+	<!-- SONY DualShock4 -->
+	<usb-device class="3" subclass="0" protocol="0" vendor-id="1356" product-id="1476" />
+	<!-- LOGICOOL F310 -->
+	<usb-device class="255" subclass="255" protocol="255" vendor-id="1133" product-id="49693" />
+</resources>
