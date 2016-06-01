@@ -1,4 +1,4 @@
-package com.serenegiant.usb;
+package com.serenegiant.gamepad;
 /*
  * AndroGamepad
  * library and sample to access to various gamepad with common interface

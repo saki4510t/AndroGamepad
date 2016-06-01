@@ -16,6 +16,7 @@ import android.content.Context;
 import android.hardware.input.InputManager;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.SparseArray;
@@ -23,8 +24,6 @@ import android.view.InputDevice;
 import android.view.InputEvent;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-
-import com.serenegiant.utils.BuildCheck;
 
 import java.util.Map;
 
@@ -195,8 +194,8 @@ public class Joystick extends IGamePad {
 			if (device == null) {
 				return null;
 			}
-			final int vid = BuildCheck.isKitKat() ? device.getVendorId() : 0;
-			final int pid = BuildCheck.isKitKat() ? device.getProductId() : 0;
+			final int vid = isKitKat() ? device.getVendorId() : 0;
+			final int pid = isKitKat() ? device.getProductId() : 0;
 			final UsbDevice usb_device = findUsbDevice(vid, pid);
 			joystick = JoystickParser.getJoystick(device, vid, pid, usb_device);
 			mInputDeviceStates.put(deviceId, joystick);
@@ -235,5 +234,9 @@ public class Joystick extends IGamePad {
 			}
 		}
 	};
+
+	private static boolean isKitKat() {
+		return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT);
+	}
 
 }

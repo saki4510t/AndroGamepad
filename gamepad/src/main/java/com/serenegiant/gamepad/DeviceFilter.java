@@ -1,4 +1,4 @@
-package com.serenegiant.usb;
+package com.serenegiant.gamepad;
 /*
  * UVCCamera
  * library and sample to access to UVC web camera on non-rooted Android device

@@ -19,7 +19,7 @@ import android.hardware.usb.UsbInterface;
 import android.hardware.usb.UsbRequest;
 import android.util.Log;
 
-import com.serenegiant.usb.USBMonitor.UsbControlBlock;
+import com.serenegiant.gamepad.USBMonitor.UsbControlBlock;
 
 import java.nio.ByteBuffer;
 
