@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.serenegiant:gamepad:0.1.0'
+    compile 'com.serenegiant:gamepad:0.1.1'
 }
 ```
 
