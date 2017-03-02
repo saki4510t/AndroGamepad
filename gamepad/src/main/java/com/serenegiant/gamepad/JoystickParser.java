@@ -26,6 +26,7 @@ import com.serenegiant.gamepad.modules.JoystickGeneral;
 import com.serenegiant.gamepad.modules.JoystickJCU3312s;
 
 import java.util.List;
+import java.util.Locale;
 
 import static com.serenegiant.gamepad.GamePadConst.KEY_NUMS;
 
@@ -247,7 +248,7 @@ public abstract class JoystickParser {
 		}
 		sb.setLength(0);
 		for (int i = 0; i < n; i++) {
-			sb.append(String.format("%12f", mAxisValues[i]));
+			sb.append(String.format(Locale.US, "%12f", mAxisValues[i]));
 		}
 //		Log.v(TAG, sb.toString());
 	}
