@@ -111,10 +111,11 @@ public class Joystick extends IGamePad {
 		return result;
 	}
 
-	public void dispatchGenericMotionEvent(final MotionEvent event) {
+	public boolean dispatchGenericMotionEvent(final MotionEvent event) {
 //		if (DEBUG) Log.v(TAG, "dispatchGenericMotionEvent:" + event);
 		// Check that the event came from a joystick since a generic motion event
 		// could be almost anything.
+		boolean result = false;
 		if (event.getAction() == MotionEvent.ACTION_MOVE) {
 			final JoystickParser joystick = getJoystick(event.getDeviceId());
 			if ((joystick != null) && joystick.isJoystick()) {
@@ -122,10 +123,11 @@ public class Joystick extends IGamePad {
 //					// XXX 変更通知する?
 //				}
 				synchronized (mSync) {
-					joystick.onJoystickMotion(event);
+					result = joystick.onJoystickMotion(event);
 				}
 			}
 		}
+		return result;
 	}
 
 	public static boolean isFromSource(final InputEvent event, int source) {
