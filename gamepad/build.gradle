@@ -1,15 +1,21 @@
 apply plugin: 'com.android.library'
 
 android {
-	compileSdkVersion 25
-	buildToolsVersion "25.0.2"
+	compileSdkVersion versionCompiler
+	buildToolsVersion versionBuildTool
+
+	compileOptions {
+		sourceCompatibility javaSourceCompatibility
+		targetCompatibility javaTargetCompatibility
+	}
 
 	defaultConfig {
 		minSdkVersion 16
-		targetSdkVersion 25
-		versionCode 3
-		versionName "0.1.2"
+		targetSdkVersion versionTarget
+		versionCode appVersionCode
+		versionName appVersionName
 	}
+
 	buildTypes {
 		release {
 			minifyEnabled false
@@ -19,7 +25,7 @@ android {
 }
 
 dependencies {
-	compile fileTree(dir: 'libs', include: ['*.jar'])
+	api fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 def repo = new File(rootDir, "repository")
